@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../lib/font-awesome.min.css">
+
+        <script src="../../build/react.js"></script>
+        <script src="../../build/JSXTransformer.js"></script>
+        <script src="../../controller/login.js"></script>
+    </head>
+    <body>
+        <script type="text/jsx">
+            var MainView = React.createClass
+            ({
+                render : function()
+                {
+                    return(
+                        <div>
+                            <TopView />
+                            <MiddleTitleView />
+                            <MiddleInputView />
+                        </div>
+                    );
+                }
+            });
+            var TopView = React.createClass
+            ({
+                render : function()
+                {
+                    return(
+                        <div style={{ backgroundColor: '#ff0000', height: 50 }}>
+                            <div style={{ float: 'left', width: '20%' }}>
+                                <button type="button" style={ TopViewLeftButtonStyle }>
+                                    <i className="icon-chevron-left icon-large"></i>
+                                </button>
+                            </div>
+                            <div style={{ float: 'left', width: '60%', textAlign: 'center', marginTop: 5 }}>
+                                <h4 style={{color: '#ffffff'}}>登录</h4>
+                            </div>
+                        </div>
+                    );
+                }
+            });
+            var MiddleTitleView = React.createClass
+            ({
+                render : function()
+                {
+                    return(
+                        <div style={{ textAlign: 'center', marginTop : 30 }}>
+                            <h4 style={{ color: '#ff0000'}}>登录</h4>
+                        </div>
+                    );
+                }
+            });
+            var MiddleInputView = React.createClass
+            ({
+                render : function()
+                {
+                    return(
+                        <div className="container" style={{ paddingLeft: 20, paddingRight: 20, marginTop : 30 }}>
+                            <form className="form-login">
+                                <input type="text" style={{ height: 50 }} id="loginInputEmail" className="form-control" placeholder="手机号/邮箱" required />
+                                <input type="password" style={{ height: 50 }} id="loginInputPassword" className="form-control" placeholder="密码" required />
+                                <button type="button" className="btn btn-lg btn-danger btn-block" style={{ fontSize: 16, marginTop : 30 }} data-toggle="modal" onclick="checkInput()">登录</button>
+                                <hr style={{ height: 1, width: 200, border: 'none', borderTop: 1, backgroundColor: '#999999', marginTop: 30, marginBottom: 30 }} />
+                                <button type="button" className="btn btn-lg btn-success btn-block" style={{ fontSize: 16 }}>微信登录</button>
+                            </form>
+                        </div>
+                    );
+                }
+            });
+
+            var TopViewLeftButtonStyle =
+            {
+                color: '#ffffff',
+                width: 60,
+                height: 40,
+                marginTop: 5,
+                marginLeft: 10,
+                backgroundColor: 'transparent',
+                border: 'none'
+            };
+
+            React.render
+            (
+                <MainView />, document.body
+            );
+        </script>
+
+        <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+        <script src="../../lib/jquery-2.1.4.min.js"></script>
+        <!-- 包括所有已编译的插件 -->
+        <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>
