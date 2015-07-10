@@ -9,7 +9,7 @@
         <link href="../../lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../../lib/font-awesome.min.css">
 
-        <link href="login.css" rel="stylesheet">
+        <link href="../../css/sign.css" rel="stylesheet">
 
         <script src="../../build/react.js"></script>
         <script src="../../build/JSXTransformer.js"></script>
@@ -54,7 +54,7 @@
                 {
                     return(
                             <div style={{ textAlign: 'center', marginTop : 30 }}>
-                                <h4 style={{ color: '#ff0000'}}>登录</h4>
+                                <h4 style={{ color: '#ff0000'}}>注册</h4>
                             </div>
                     );
                 }
@@ -65,14 +65,30 @@
                 {
                     return(
                             <div className="container" style={{ paddingLeft: 20, paddingRight: 20, marginTop : 30 }}>
-                                <form className="form-login">
-                                    <input type="text" style={{ height: 50 }} id="loginInputEmail" className="form-control" placeholder="手机号/邮箱" required />
-                                    <input type="password" style={{ height: 50 }} id="loginInputPassword" className="form-control" placeholder="密码" required />
-                                    <button type="button" className="btn btn-lg btn-danger btn-block" style={{ fontSize: 16, marginTop : 30 }} data-toggle="modal" onclick="checkInput()">登录</button>
+                                <form className="form-sign">
+                                    <input type="number" style={{ height: 50 }} id="signPhone" className="form-control" placeholder="手机号/邮箱" required />
+                                    <input type="password" style={{ height: 50 }} id="signPassword" className="form-control" placeholder="密码" required />
+                                    <InputCodeView />
+                                    <button type="button" className="btn btn-lg btn-danger btn-block" style={{ fontSize: 16, marginTop : 50 }} data-toggle="modal">注册</button>
                                     <hr style={{ height: 1, width: 200, border: 'none', borderTop: 1, backgroundColor: '#999999', marginTop: 30, marginBottom: 30 }} />
                                     <button type="button" className="btn btn-lg btn-success btn-block" style={{ fontSize: 16 }}>微信登录</button>
                                 </form>
                             </div>
+                    );
+                }
+            });
+            var InputCodeView = React.createClass
+            ({
+                render : function()
+                {
+                    return(
+                            <div style={{ textAlign : 'right' }}>
+                                <button type="button" className="btn btn-sm btn-success" style={{ fontSize: 16, marginTop : 10 }}>微信登录</button>
+                                <input type="number" style={{ height: 50, marginTop : -40 }} id="signCode" className="form-control" placeholder="验证码" required >
+
+                                </input>
+                            </div>
+
                     );
                 }
             });
